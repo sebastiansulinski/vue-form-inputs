@@ -1,6 +1,6 @@
 {
   "name": "@ssdcode/vue-form-inputs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Set of inputs to accompany vue-form",
   "main": "./src/index.js",
   "private": true,
