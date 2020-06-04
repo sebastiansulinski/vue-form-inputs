@@ -1,24 +1,19 @@
-# vue-form-inputs
+# Vue form input set
 
-## Project setup
-```
-npm install
-```
+Set of inputs to accompany [vue-form](https://github.com/sebastiansulinski/vue-form) v2.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+> This component makes use of Vue 3 composition api so please make sure it is available in your project.
 
-### Compiles and minifies for production
-```
-npm run build
+## Installation
+
+```bash
+npm install --save-dev @ssdcode/vue-form-inputs
 ```
 
-### Lints and fixes files
-```
-npm run lint
+## Usage
+
+```javascript
+import { TextInput, CheckboxInput } from '@ssdcode/vue-form-inputs'
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+To be continued... 
