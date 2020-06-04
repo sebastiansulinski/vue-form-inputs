@@ -15,10 +15,18 @@ npm install --save-dev @ssdcode/vue-form-inputs
 You can import desired input components using ES6 import syntax
 
 ```javascript
-import { TextInput, CheckboxInput } from '@ssdcode/vue-form-inputs'
+import { TextInput, CheckboxInput, SelectInput, FroalaEditor } from '@ssdcode/vue-form-inputs'
 ```
 
 Alternatively you can also use `UMD` or `CommonJs` approach by pointing to `@ssdcode/vue-form-inputs/dist/main.umd.js` or `@ssdcode/vue-form-inputs/dist/main.common.js`.
+
+#### FroalaEditor
+
+To use [FroalaEditor](https://froala.com/wysiwyg-editor/docs/), make sure you import and compile relevant css files - at the very least:
+
+```css
+@import '~froala-editor/css/froala_editor.pkgd.css';
+```
 
 To be continued... 
 

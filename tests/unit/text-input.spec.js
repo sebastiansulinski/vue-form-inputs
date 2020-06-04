@@ -1,19 +1,13 @@
-import { shallowMount } from '@vue/test-utils';
+import Vue from 'vue';
+import { mount } from '@vue/test-utils';
 import { TextInput } from '../../src/index';
+import CompositionApi from '@vue/composition-api';
 
-jest.mock('@ssdcode/js-mutators', () => {
-  return {
-    default: {
-      toUpperCase: value => value.toUpperCase(),
-      toLowerCase: value => value.toLowerCase(),
-      slug: value => value.replace(' ', '-'),
-    },
-  };
-});
+Vue.use(CompositionApi);
 
-describe('TextInput', () => {
-  test('Returns input with set properties and attributes', () => {
-    const component = shallowMount(TextInput, {
+describe('TextInput test', () => {
+  it('Returns input with set properties and attributes', () => {
+    const wrapper = mount(TextInput, {
       propsData: {
         value: 'Jon Doe',
       },
@@ -24,13 +18,36 @@ describe('TextInput', () => {
       },
     });
 
-    expect(component.props()).toEqual({
+    expect(wrapper.props()).toEqual({
       value: 'Jon Doe',
       mutators: [],
     });
 
-    expect(component.html()).toEqual(
+    expect(wrapper.attributes()).toEqual({
+      type: 'text',
+      id: 'name',
+      placeholder: 'Full name',
+    });
+
+    expect(wrapper.html()).toEqual(
       '<input type="text" id="name" placeholder="Full name">'
     );
+  });
+
+  it('Emits input event', async () => {
+    const wrapper = mount(TextInput);
+
+    const input = wrapper.find('input');
+    input.setValue('Jon');
+    input.trigger('keyup');
+
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.vm.input).toBe('Jon');
+
+    const emitted = wrapper.emitted('input');
+
+    expect(emitted).toHaveLength(2);
+    expect(emitted[1]).toEqual(['Jon']);
   });
 });

@@ -2,6 +2,7 @@
 node_modules
 /dist/demo.html
 package-lock.json
+/tests/unit/__snapshots__/
 
 # local env files
 .env.local
