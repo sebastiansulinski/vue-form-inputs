@@ -57,8 +57,8 @@ describe('CheckboxInput test', () => {
 
     const emitted = wrapper.emitted('change');
 
-    expect(emitted).toHaveLength(2);
-    expect(emitted[1]).toEqual(['no']);
+    expect(emitted).toHaveLength(1);
+    expect(emitted[0]).toEqual(['no']);
   });
 
   it('Emits input event for checked', async () => {
@@ -80,7 +80,7 @@ describe('CheckboxInput test', () => {
 
     const emitted = wrapper.emitted('change');
 
-    expect(emitted).toHaveLength(2);
-    expect(emitted[1]).toEqual([1]);
+    expect(emitted).toHaveLength(1);
+    expect(emitted[0]).toEqual([1]);
   });
 });

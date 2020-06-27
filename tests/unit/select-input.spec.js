@@ -107,7 +107,7 @@ describe('SelectInput test', () => {
 
     const emitted = wrapper.emitted('change');
 
-    expect(emitted).toHaveLength(2);
-    expect(emitted[1]).toEqual(['mrs']);
+    expect(emitted).toHaveLength(1);
+    expect(emitted[0]).toEqual(['mrs']);
   });
 });
