@@ -1,6 +1,6 @@
 import { ref, watch } from '@vue/composition-api';
 import * as mutators from '@ssdcode/js-mutators';
-export default function(value, onEvent, mutate = []) {
+export default function (value, onEvent, mutate = []) {
   let input = ref(value);
   const get = value => {
     for (const mutator of mutate) {
